@@ -21,7 +21,7 @@ function addVote(candidate) {
   }  else {
      votes[candidate] = 1;
   }
-
+}
 function countVotes() {
   return votes;
 }
