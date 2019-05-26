@@ -1,8 +1,27 @@
 I learned that associative arrays are basically used because Insert, Select, and Delete operations are O(1) operations. That really matters because the get(select) performance is the same as an array. Given a few conditions are met. 
 
 	1. Hash function has to distribute data well. 
-	2. Resizing should be done at a factor of 0.7 to full capacity of the filled table.
+	2. Resizing should be done at a factor of 0.7 to full capacity of the filled table. (load factor)
 	3. For the same key we should get the same place in the table. It should not be a different place. If this criteria isn't met then we wont be able to obtain the data. 
 	4. We should have twice the table size as the data we expect to have in the table. So if we expect to have 10 values then we should have a table that can hold 20 values. 
 
 Hash maps are useful in many ways compared to other data structures like linked list or arrays if the above criteria is met. If some of them are not best then we may take a performance hit which will cause the Hash Map to be closer to an array or linked list in performance or perhaps worse. 
+
+Speaking of performance the hash table efficiency according to Jay Wengrow (author of A Common Sense Guide to Data Structures and Algorithms) is based on 3 factors:
+	A. How much data we're using storing in the hash table
+	B. How many cells are available in the hash table
+	C. Which hash function we're using
+
+Here is an example of an Insert from Wengrow's book:
+
+var votes = {};
+function addVote(candidate) {
+  if(votes[candidate])  {
+    votes[candidate]++;
+  }  else {
+     votes[candidate] = 1;
+  }
+
+function countVotes() {
+  return votes;
+}
