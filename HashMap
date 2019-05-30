@@ -1,3 +1,10 @@
+Blog
+Hash table summary:
+	• Key to value mappings are unique
+	• Hash tables are typically very fast
+	• For small datasets, arrays are usually more efficient
+	• Hash table don’t order entries in a predictable way
+
 I learned that associative arrays are basically used because Insert, Select, and Delete operations are O(1) operations. That really matters because the get(select) performance is the same as an array. Given a few conditions are met. 
 
 	1. Hash function has to distribute data well. 
@@ -21,7 +28,34 @@ function addVote(candidate) {
   }  else {
      votes[candidate] = 1;
   }
-}
+
 function countVotes() {
   return votes;
 }
+
+So you're probably wondering if you need to implement a complicated hash function yourself? No you don't. In each language you have a way to do this
+	1. .Net / Python / Ruby - GatHashCode function
+	2. JS - you may need to implement custom code
+	3. JS with Node npm install an appropriate module
+
+The integer has value is often calculated with an object's id. So if you have 2 d
+
+A hash value is based on what it means for two objects to be equal. 
+
+2 objects are equal if they are the same object living in the same location. We need to know this if we are working with custom classes. 
+
+How do we use hash tables across table?
+JavaScript we use objects as associative arrays. 
+C#/.Net hash table in Systems.Collections.
+
+When should use a hash data structures. Hash maps also take a lot of space.  Searching is very fast. Insertion and Deletion are also quick. 
+
+Hash map operations always take the same amount of time, regardless of the size of the hash table. The only reason we may not get O(1) operation is when we will have a collision. 
+
+There's no real sorting with hash based structures. 
+
+Keywords:  hash function maps the key to a value. In best case scenario it will map a key to a unqie slot in a table. 
+
+
+
+Other note: if you are tying to add to a value that already exists then it will do an update operation. 
